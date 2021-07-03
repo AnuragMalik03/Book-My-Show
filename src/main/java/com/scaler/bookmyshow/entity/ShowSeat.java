@@ -23,5 +23,7 @@ public class ShowSeat extends Auditable{
     private Booking booking;
     @ManyToOne
     private MovieShow show;
+    @ManyToOne
+    private Seat seat;
 
 }

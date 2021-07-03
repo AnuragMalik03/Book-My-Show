@@ -8,12 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "USER_DETAILS")
 @Getter
 @Setter
 public class User extends Auditable{
 
-    private String userName;
-    private String email;
+    private String name;
+    private String emailId;
     private String mobile;
 }

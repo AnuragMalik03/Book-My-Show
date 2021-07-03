@@ -13,17 +13,18 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import java.io.Serializable;
 import java.util.Date;
 
 @Getter
 @Setter
 @MappedSuperclass
-public abstract class Auditable {
+public abstract class Auditable implements Serializable {
 
     @Id
     @GeneratedValue(generator = "sequence", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "sequence", allocationSize = 10)
-    private Long id;
+    private long id;
 
     @Column(name = "CREATED_AT", updatable = false, nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
